@@ -195,7 +195,7 @@ def get_shape():
 
 # Draws the center text
 def draw_text_middle(surface, text, size, color):
-    font = pygame.font.Font('../../../Fonts/VT323/VT323-Regular.ttf', size)
+    font = pygame.font.SysFont('ariel', size)
     label = font.render(text, 1, color)
 
     surface.blit(label, (top_left_x + play_width/2 - (label.get_width()/2), top_left_y + play_height/2 - label.get_height()/2))
@@ -235,7 +235,7 @@ def clear_rows(grid, locked):
                 
 # Draws next shape on the side
 def draw_next_shape(shape, surface):
-    font = pygame.font.Font('../../../Fonts/DotGothic16/DotGothic16-Regular.ttf', 30)
+    font = pygame.font.SysFont('courier', 30)
     label = font.render('Next Shape', 1, (255,255,255))
 
     sx = top_left_x + play_width + 50
@@ -273,13 +273,13 @@ def draw_window(surface, grid, score=0, last_score=0):
     surface.fill((0,0,0))
 
     pygame.font.init()
-    font = pygame.font.Font('../../../Fonts/DotGothic16/DotGothic16-Regular.ttf', 60)
+    font = pygame.font.SysFont('courier', 60)
     label = font.render("Tetris", 1, (255,255,255))
 
     surface.blit(label, (top_left_x + play_width/2 - (label.get_width()/2), 20))
 
     # current score
-    font = pygame.font.Font('../../../Fonts/DotGothic16/DotGothic16-Regular.ttf', 30)
+    font = pygame.font.SysFont('courier', 30)
     label = font.render('Score:' + str(score), 1, (255,255,255))
 
     sx = top_left_x + play_width + 50
